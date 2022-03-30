@@ -24,7 +24,9 @@ jobs:
       - checkout
       - run:
           name: "git tag"
-          command: git log
+          command: |
+            git tag -a batch_release_20220330 -m '会員バッチリリース' ${CIRCLE_SHA1}
+            git push origin batch_release_20220330
       - run:
           name: "echo date"
           command: |
