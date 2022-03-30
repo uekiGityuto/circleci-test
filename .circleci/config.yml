@@ -25,6 +25,8 @@ jobs:
       - run:
           name: "git tag"
           command: |
+            git config --global user.email "you@example.com"
+            git config --global user.name "Your Name"
             git tag -a batch_release_20220330 -m '会員バッチリリース'
       - run:
           name: "echo date"
