@@ -8,7 +8,7 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # コンテキスト/プロジェクト UI 環境変数を参照します
     steps:
       - checkout # プロジェクト ディレクトリ内のコードをチェックアウトします
-      - run: echo "hello world" # `echo` コマンドを実行します
+      - run: echo "hello world!!!!!!" # `echo` コマンドを実行します
 
 
 workflows:
