@@ -20,6 +20,4 @@ workflows:
           filters:
             branches:
               only: 
-                - develop
                 - /^release_\d{8}\
-                - release
