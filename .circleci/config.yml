@@ -22,3 +22,4 @@ workflows:
               only: 
                 - develop
                 - /^release_\d{8}\
+                - release
