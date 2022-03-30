@@ -21,4 +21,3 @@ workflows:
             branches:
               only: 
                 - /^release_\d{8}\
-                - test
