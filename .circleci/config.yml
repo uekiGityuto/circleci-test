@@ -24,10 +24,6 @@ jobs:
       - checkout
       - run: echo batch_release`date +%Y%m%d%H%M`;
 
-    steps:
-      - checkout # プロジェクト ディレクトリ内のコードをチェックアウトします
-      - run: echo "hello world!!!!!!" # `echo` コマンドを実行します
-
 workflows:
   version: 2
 
