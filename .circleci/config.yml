@@ -24,7 +24,7 @@ jobs:
       - checkout
       - run:
           name: "git tag"
-          command: git tag "batch"
+          command: git log
       - run:
           name: "echo date"
           command: |
