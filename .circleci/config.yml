@@ -21,4 +21,4 @@ workflows:
             branches:
               only: 
                 - develop
-                - /^release-\d{8}\
+                - /^release_\d{8}\
