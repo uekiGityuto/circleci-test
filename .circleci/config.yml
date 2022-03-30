@@ -22,7 +22,7 @@ jobs:
       - setup_remote_docker:
           docker_layer_caching: true
       - checkout
-      - run: echo batch_release`date +%Y%m%d%H%M`;
+      - run: echo batch_release_`date +%Y%m%d%H%M`;
 
 workflows:
   version: 2
