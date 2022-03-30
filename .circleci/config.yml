@@ -9,3 +9,14 @@ jobs:
     steps:
       - checkout # プロジェクト ディレクトリ内のコードをチェックアウトします
       - run: echo "hello world" # `echo` コマンドを実行します
+
+
+workflows:
+  version: 2
+
+  ci:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: develop
