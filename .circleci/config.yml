@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 jobs:
   build:
     docker:
@@ -20,7 +20,4 @@ workflows:
           filters:
             branches:
               only: 
-                - develop
-                - release
-                - /user-.*/
                 - /^release_\d{8}$/
