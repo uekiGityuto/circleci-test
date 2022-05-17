@@ -10,6 +10,30 @@ jobs:
       - checkout # プロジェクト ディレクトリ内のコードをチェックアウトします
       - run: echo "hello world!!!!!!" # `echo` コマンドを実行します
 
+  build2:
+    docker:
+      - image: google/cloud-sdk:alpine
+    working_directory: ~/project
+    environment:
+      - LANG: ja_JP.UTF-8
+      - IMAGE_HOST: asia-docker.pkg.dev
+      - IMAGE_PATH: asia-docker.pkg.dev/dm2-gw-219813/pf-member-service-batch/pf-member-service-batch
+    steps:
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - checkout
+      - run:
+          name: "git tag"
+          command: |
+            git config --global user.email "you@example.com"
+            git config --global user.name "Your Name"
+            git tag -a batch_release_20220330 -m '会員バッチリリース'
+      - run:
+          name: "echo date"
+          command: |
+            TAG="batch_release_`date +%Y%m%d%H%M`"
+            echo ${TAG}
+            echo ${CIRCLE_TAG}
 
 workflows:
   version: 2
@@ -21,3 +45,4 @@ workflows:
             branches:
               only: 
                 - /^release_\d{8}$/
+      - build2
